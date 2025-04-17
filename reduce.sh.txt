@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Sum all word counts from the map outputs
+total_count=0
+
+for file in "$@"; do
+    count=$(cat "$file")
+    total_count=$((total_count + count))
+done
+
+# Output the total word count
+echo "$total_count"
