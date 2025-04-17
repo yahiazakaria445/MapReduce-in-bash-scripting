@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -e
+
+# Create required directories
+mkdir -p input chunks maps output
+
+# Copy the source file
+cp /usr/share/dict/words input/words.txt
+
+# Split the file into chunks (4 chunks)
+split -l $(($(wc -l < input/words.txt) / 4)) input/words.txt chunks/chunk_
+
+# Run map phase (parallel)
+for file in chunks/chunk_*; do
+    ./map.sh "$file" > "maps/$(basename "$file").out" &
+done
+wait
+
+# Run reduce phase
+./reduce.sh maps/*.out > output/total.txt
+
+echo "Total word count:"
+cat output/total.txt
+
