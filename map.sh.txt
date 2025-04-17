@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Functional map: count words in a file
+map_count() {
+    local file="$1"
+    wc -w < "$file"
+}
+
+# Call map_count on the given file and print the result
+map_count "$1"
