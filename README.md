@@ -1,5 +1,6 @@
 # MapReduce in Bash Scripting
-This project implements a simplified MapReduce framework using pure Bash scripting to count the total number of words in a large file. It demonstrates the fundamental concepts of distributed computing: splitting data, mapping, and reducing all within the shell environment.
+
+### This project implements a simplified MapReduce framework using pure Bash scripting to count the total number of words in a large file. It demonstrates the fundamental concepts of distributed computing: splitting data, mapping, and reducing all within the shell environment. ###
 ---
 
 ## project architecture diagram
